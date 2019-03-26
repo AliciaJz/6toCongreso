@@ -1,0 +1,19 @@
+{
+    "congreso": {
+        "awscloudformation": {
+            "AuthRoleName": "a6tocongreso-20190326103545-authRole",
+            "UnauthRoleArn": "arn:aws:iam::404795435238:role/a6tocongreso-20190326103545-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::404795435238:role/a6tocongreso-20190326103545-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "a6tocongreso-20190326103545-deployment",
+            "UnauthRoleName": "a6tocongreso-20190326103545-unauthRole",
+            "StackName": "a6tocongreso-20190326103545",
+            "StackId": "arn:aws:cloudformation:us-east-1:404795435238:stack/a6tocongreso-20190326103545/34e133f0-4fe5-11e9-a260-126f3d94de7e"
+        },
+        "categories": {
+            "auth": {
+                "cognito787f9747": {}
+            }
+        }
+    }
+}
