@@ -110,26 +110,28 @@ export const listComments = `query ListComments(
   }
 }
 `;
-export const getAsitente = `query GetAsitente($id: ID!) {
-  getAsitente(id: $id) {
+export const getAsistente = `query GetAsistente($id: ID!) {
+  getAsistente(id: $id) {
     id
     NombreGafete
     NombreCertificado
     Clases
+    Categoria
   }
 }
 `;
-export const listAsitentes = `query ListAsitentes(
-  $filter: ModelAsitenteFilterInput
+export const listAsistentes = `query ListAsistentes(
+  $filter: ModelAsistenteFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listAsitentes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listAsistentes(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       NombreGafete
       NombreCertificado
       Clases
+      Categoria
     }
     nextToken
   }
@@ -140,6 +142,13 @@ export const getClase = `query GetClase($id: ID!) {
     id
     NombreClase
     Ponente
+    Asistentes {
+      id
+      NombreGafete
+      NombreCertificado
+      Clases
+      Categoria
+    }
   }
 }
 `;
@@ -153,6 +162,13 @@ export const listClases = `query ListClases(
       id
       NombreClase
       Ponente
+      Asistentes {
+        id
+        NombreGafete
+        NombreCertificado
+        Clases
+        Categoria
+      }
     }
     nextToken
   }

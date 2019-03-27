@@ -160,30 +160,33 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
   }
 }
 `;
-export const createAsitente = `mutation CreateAsitente($input: CreateAsitenteInput!) {
-  createAsitente(input: $input) {
+export const createAsistente = `mutation CreateAsistente($input: CreateAsistenteInput!) {
+  createAsistente(input: $input) {
     id
     NombreGafete
     NombreCertificado
     Clases
+    Categoria
   }
 }
 `;
-export const updateAsitente = `mutation UpdateAsitente($input: UpdateAsitenteInput!) {
-  updateAsitente(input: $input) {
+export const updateAsistente = `mutation UpdateAsistente($input: UpdateAsistenteInput!) {
+  updateAsistente(input: $input) {
     id
     NombreGafete
     NombreCertificado
     Clases
+    Categoria
   }
 }
 `;
-export const deleteAsitente = `mutation DeleteAsitente($input: DeleteAsitenteInput!) {
-  deleteAsitente(input: $input) {
+export const deleteAsistente = `mutation DeleteAsistente($input: DeleteAsistenteInput!) {
+  deleteAsistente(input: $input) {
     id
     NombreGafete
     NombreCertificado
     Clases
+    Categoria
   }
 }
 `;
@@ -192,6 +195,13 @@ export const createClase = `mutation CreateClase($input: CreateClaseInput!) {
     id
     NombreClase
     Ponente
+    Asistentes {
+      id
+      NombreGafete
+      NombreCertificado
+      Clases
+      Categoria
+    }
   }
 }
 `;
@@ -200,6 +210,13 @@ export const updateClase = `mutation UpdateClase($input: UpdateClaseInput!) {
     id
     NombreClase
     Ponente
+    Asistentes {
+      id
+      NombreGafete
+      NombreCertificado
+      Clases
+      Categoria
+    }
   }
 }
 `;
@@ -208,6 +225,13 @@ export const deleteClase = `mutation DeleteClase($input: DeleteClaseInput!) {
     id
     NombreClase
     Ponente
+    Asistentes {
+      id
+      NombreGafete
+      NombreCertificado
+      Clases
+      Categoria
+    }
   }
 }
 `;

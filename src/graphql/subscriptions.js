@@ -160,30 +160,33 @@ export const onDeleteComment = `subscription OnDeleteComment {
   }
 }
 `;
-export const onCreateAsitente = `subscription OnCreateAsitente {
-  onCreateAsitente {
+export const onCreateAsistente = `subscription OnCreateAsistente {
+  onCreateAsistente {
     id
     NombreGafete
     NombreCertificado
     Clases
+    Categoria
   }
 }
 `;
-export const onUpdateAsitente = `subscription OnUpdateAsitente {
-  onUpdateAsitente {
+export const onUpdateAsistente = `subscription OnUpdateAsistente {
+  onUpdateAsistente {
     id
     NombreGafete
     NombreCertificado
     Clases
+    Categoria
   }
 }
 `;
-export const onDeleteAsitente = `subscription OnDeleteAsitente {
-  onDeleteAsitente {
+export const onDeleteAsistente = `subscription OnDeleteAsistente {
+  onDeleteAsistente {
     id
     NombreGafete
     NombreCertificado
     Clases
+    Categoria
   }
 }
 `;
@@ -192,6 +195,13 @@ export const onCreateClase = `subscription OnCreateClase {
     id
     NombreClase
     Ponente
+    Asistentes {
+      id
+      NombreGafete
+      NombreCertificado
+      Clases
+      Categoria
+    }
   }
 }
 `;
@@ -200,6 +210,13 @@ export const onUpdateClase = `subscription OnUpdateClase {
     id
     NombreClase
     Ponente
+    Asistentes {
+      id
+      NombreGafete
+      NombreCertificado
+      Clases
+      Categoria
+    }
   }
 }
 `;
@@ -208,6 +225,13 @@ export const onDeleteClase = `subscription OnDeleteClase {
     id
     NombreClase
     Ponente
+    Asistentes {
+      id
+      NombreGafete
+      NombreCertificado
+      Clases
+      Categoria
+    }
   }
 }
 `;

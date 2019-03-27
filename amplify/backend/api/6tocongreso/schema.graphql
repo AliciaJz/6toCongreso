@@ -16,15 +16,25 @@ type Comment @model {
   post: Post @connection(name: "PostComments")
 }
 
-type Asitente @model{
+type Asistente @model{
 	id: ID!
 	NombreGafete: String!
 	NombreCertificado: String!
 	Clases: [String]
+  Categoria: [AsistenteType]
 }
 
 type Clase @model{
 	id: ID!
 	NombreClase: String!
 	Ponente: String!
+  Asistentes: [Asistente]
+}
+
+enum AsistenteType {
+  VENDEDOR
+  ASISTENTE
+  PONENTE
+  VOLUNTARIO
+  MESA
 }
