@@ -3,6 +3,7 @@ type Blog @model {
   name: String!
   posts: [Post] @connection(name: "BlogPosts")
 }
+
 type Post @model {
   id: ID!
   title: String!
@@ -15,175 +16,15 @@ type Comment @model {
   post: Post @connection(name: "PostComments")
 }
 
-type Asitente {
+type Asitente @model{
 	id: ID!
 	NombreGafete: String!
 	NombreCertificado: String!
 	Clases: [String]
 }
 
-type AsitenteConnection {
-	items: [Asitente]
-	nextToken: String
-}
-
-type Clase {
+type Clase @model{
 	id: ID!
 	NombreClase: String!
 	Ponente: String!
-}
-
-type ClaseConnection {
-	items: [Clase]
-	nextToken: String
-}
-
-input CreateAsitenteInput {
-	id: ID!
-	NombreGafete: String!
-	NombreCertificado: String!
-	Clases: [String]
-}
-
-input CreateClaseInput {
-	id: ID!
-	NombreClase: String!
-	Ponente: String!
-}
-
-input DeleteAsitenteInput {
-	id: ID!
-	NombreGafete: String!
-}
-
-input DeleteClaseInput {
-	id: ID!
-	NombreClase: String!
-}
-
-type Mutation {
-	createAsitente(input: CreateAsitenteInput!): Asitente
-	updateAsitente(input: UpdateAsitenteInput!): Asitente
-	deleteAsitente(input: DeleteAsitenteInput!): Asitente
-	createClase(input: CreateClaseInput!): Clase
-	updateClase(input: UpdateClaseInput!): Clase
-	deleteClase(input: DeleteClaseInput!): Clase
-}
-
-type Query {
-	getAsitente(id: ID!, NombreGafete: String!): Asitente
-	listAsitentes(filter: TableAsitenteFilterInput, limit: Int, nextToken: String): AsitenteConnection
-	getClase(id: ID!, NombreClase: String!): Clase
-	listClases(filter: TableClaseFilterInput, limit: Int, nextToken: String): ClaseConnection
-}
-
-type Subscription {
-	onCreateAsitente(
-		id: ID,
-		NombreGafete: String,
-		NombreCertificado: String,
-		Clases: [String]
-	): Asitente
-		@aws_subscribe(mutations: ["createAsitente"])
-	onUpdateAsitente(
-		id: ID,
-		NombreGafete: String,
-		NombreCertificado: String,
-		Clases: [String]
-	): Asitente
-		@aws_subscribe(mutations: ["updateAsitente"])
-	onDeleteAsitente(
-		id: ID,
-		NombreGafete: String,
-		NombreCertificado: String,
-		Clases: [String]
-	): Asitente
-		@aws_subscribe(mutations: ["deleteAsitente"])
-	onCreateClase(id: ID, NombreClase: String, Ponente: String): Clase
-		@aws_subscribe(mutations: ["createClase"])
-	onUpdateClase(id: ID, NombreClase: String, Ponente: String): Clase
-		@aws_subscribe(mutations: ["updateClase"])
-	onDeleteClase(id: ID, NombreClase: String, Ponente: String): Clase
-		@aws_subscribe(mutations: ["deleteClase"])
-}
-
-input TableAsitenteFilterInput {
-	id: TableIDFilterInput
-	NombreGafete: TableStringFilterInput
-	NombreCertificado: TableStringFilterInput
-	Clases: TableStringFilterInput
-}
-
-input TableBooleanFilterInput {
-	ne: Boolean
-	eq: Boolean
-}
-
-input TableClaseFilterInput {
-	id: TableIDFilterInput
-	NombreClase: TableStringFilterInput
-	Ponente: TableStringFilterInput
-}
-
-input TableFloatFilterInput {
-	ne: Float
-	eq: Float
-	le: Float
-	lt: Float
-	ge: Float
-	gt: Float
-	contains: Float
-	notContains: Float
-	between: [Float]
-}
-
-input TableIDFilterInput {
-	ne: ID
-	eq: ID
-	le: ID
-	lt: ID
-	ge: ID
-	gt: ID
-	contains: ID
-	notContains: ID
-	between: [ID]
-	beginsWith: ID
-}
-
-input TableIntFilterInput {
-	ne: Int
-	eq: Int
-	le: Int
-	lt: Int
-	ge: Int
-	gt: Int
-	contains: Int
-	notContains: Int
-	between: [Int]
-}
-
-input TableStringFilterInput {
-	ne: String
-	eq: String
-	le: String
-	lt: String
-	ge: String
-	gt: String
-	contains: String
-	notContains: String
-	between: [String]
-	beginsWith: String
-}
-
-input UpdateAsitenteInput {
-	id: ID!
-	NombreGafete: String!
-	NombreCertificado: String
-	Clases: [String]
-}
-
-input UpdateClaseInput {
-	id: ID!
-	NombreClase: String!
-	Ponente: String
 }

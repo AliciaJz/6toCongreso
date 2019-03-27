@@ -1,0 +1,13 @@
+{
+    "bucketName": "6tocongresod82a2686f7cf499e8de212100ff3ea64",
+    "authPolicyName": "s3_amplify_305acda4",
+    "unauthPolicyName": "s3_amplify_305acda4",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authPermissions": "rw",
+    "unauthPermissions": "rw"
+}

@@ -19,5 +19,11 @@
 			"service": "S3AndCloudFront",
 			"providerPlugin": "awscloudformation"
 		}
+	},
+	"storage": {
+		"6toimages": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
 	}
 }
